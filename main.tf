@@ -55,3 +55,8 @@ resource "aws_security_group" "hextris-server" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_ec2_instance_state" "test" {
+  instance_id = aws_instance.hextris-server.id
+  state       = "stopped"
+}
